@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rubric | Academic Portfolio</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-surface-variant": "#434845",
+                "outline": "#737875",
+                "on-secondary-fixed-variant": "#494550",
+                "secondary-container": "#e7e0ee",
+                "on-background": "#191c1d",
+                "surface-bright": "#f8f9fa",
+                "tertiary-fixed": "#d3e4fc",
+                "tertiary": "#4f6074",
+                "on-primary": "#ffffff",
+                "surface-dim": "#d9dadb",
+                "primary-fixed": "#dbe5df",
+                "tertiary-container": "#d0e1f9",
+                "on-secondary": "#ffffff",
+                "primary-fixed-dim": "#bfc9c3",
+                "primary": "#57615c",
+                "on-secondary-fixed": "#1d1a24",
+                "on-error": "#ffffff",
+                "surface": "#f8f9fa",
+                "on-tertiary-fixed": "#0b1d2e",
+                "secondary": "#615c68",
+                "tertiary-fixed-dim": "#b7c8df",
+                "inverse-primary": "#bfc9c3",
+                "secondary-fixed-dim": "#cac4d2",
+                "surface-container-low": "#f3f4f5",
+                "inverse-on-surface": "#f0f1f2",
+                "on-primary-fixed-variant": "#3f4945",
+                "surface-container-highest": "#e1e3e4",
+                "inverse-surface": "#2e3132",
+                "surface-tint": "#57615c",
+                "secondary-fixed": "#e7e0ee",
+                "error-container": "#ffdad6",
+                "surface-variant": "#e1e3e4",
+                "error": "#ba1a1a",
+                "on-error-container": "#93000a",
+                "on-tertiary": "#ffffff",
+                "outline-variant": "#c3c8c4",
+                "on-tertiary-fixed-variant": "#38485b",
+                "primary-container": "#d8e2dc",
+                "on-tertiary-container": "#546478",
+                "on-primary-container": "#5b6560",
+                "surface-container": "#edeeef",
+                "background": "#f8f9fa",
+                "on-primary-fixed": "#151d1a",
+                "surface-container-high": "#e7e8e9",
+                "surface-container-lowest": "#ffffff",
+                "on-surface": "#191c1d",
+                "on-secondary-container": "#67626e"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "stack-md": "1.5rem",
+                "stack-sm": "0.75rem",
+                "section-gap": "5rem",
+                "container-padding": "2.5rem",
+                "gutter": "1.5rem"
+            },
+            "fontFamily": {
+                "body-md": ["Hanken Grotesk"],
+                "headline-sm": ["Playfair Display"],
+                "body-lg": ["Hanken Grotesk"],
+                "headline-md": ["Playfair Display"],
+                "label-sm": ["Hanken Grotesk"],
+                "display-lg": ["Playfair Display"],
+                "label-lg": ["Hanken Grotesk"],
+                "headline-lg-mobile": ["Playfair Display"],
+                "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background: radial-gradient(circle at 0% 0%, #d8e2dc 0%, transparent 50%),
+                        radial-gradient(circle at 100% 100%, #e7e0ee 0%, transparent 50%),
+                        #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: inset 0 1px 1px rgba(255,255,255,0.8);
+        }
+
+        .nav-blob {
+            position: absolute;
+            z-index: -1;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .readiness-glow {
+            text-shadow: 0 0 20px rgba(87, 97, 92, 0.2);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Micro-interactions */
+        .criterion-card {
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .criterion-card:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-surface/40 backdrop-blur-xl border-r border-white/20 shadow-xl flex flex-col p-stack-md z-50">
+<div class="mb-12">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Kim Chi</h1>
+<p class="font-label-sm text-label-sm text-outline tracking-[0.2em] uppercase">ULIS - VNU</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Navigation Items mapped from JSON -->
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-white/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-body-md text-body-md">Overview</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-white/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-body-md text-body-md">Assignments</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-white/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined">article</span>
+<span class="font-body-md text-body-md">Evidence</span>
+</a>
+<!-- Active State: Rubric -->
+<a class="flex items-center gap-4 px-4 py-3 text-primary font-bold bg-primary-container/50 rounded-lg group" href="#">
+<span class="material-symbols-outlined">fact_check</span>
+<span class="font-body-md text-body-md">Rubric</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-white/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-body-md text-body-md">Reflection</span>
+</a>
+</nav>
+<div class="pt-8 border-t border-outline-variant/30 mt-auto">
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-md text-body-md">Archive</span>
+</a>
+<button class="w-full mt-4 py-3 px-6 bg-white/80 dark:bg-surface-container-highest/80 backdrop-blur border border-white/50 rounded-xl font-label-lg text-label-lg font-bold text-on-surface shadow-sm hover:shadow-md transition-all active:scale-95">
+                Download Portfolio
+            </button>
+</div>
+</aside>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 right-0 w-[calc(100%-280px)] z-40 flex justify-between items-center h-16 px-container-padding bg-surface/30 backdrop-blur-md border-b border-white/10">
+<div class="flex items-center gap-8">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Academic Portfolio</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Modules</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-sm">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-white/20 border-none rounded-full text-sm focus:ring-2 focus:ring-primary/20 w-64 backdrop-blur-sm" placeholder="Search archive..." type="text"/>
+</div>
+<button class="px-6 py-2 rounded-full border border-primary text-primary font-label-lg text-label-lg hover:bg-primary/5 transition-all">Contact</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[280px] pt-24 px-container-padding pb-section-gap max-w-[1400px]">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+<div class="space-y-4">
+<nav class="flex items-center gap-2 text-outline font-label-sm text-label-sm uppercase tracking-widest">
+<span>Portfolio</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-on-surface">Assessment Matrix</span>
+</nav>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Academic evaluation ledger</h2>
+<p class="text-on-surface-variant max-w-2xl font-body-lg text-body-lg italic">
+                    A multi-dimensional rubric tracking scholarly growth, creative execution, and technical proficiency across the academic year 2025-26.
+                </p>
+</div>
+<!-- Readiness Score Glass Card -->
+<div class="glass-panel p-8 rounded-3xl flex flex-col items-center justify-center min-w-[200px] border-t-2 border-white/60">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-tighter mb-2">Current Readiness</span>
+<div class="relative">
+<span class="font-display-lg text-display-lg font-bold text-primary readiness-glow">100%</span>
+</div>
+<div class="w-full h-1 bg-primary-container/30 rounded-full mt-4 overflow-hidden">
+<div class="h-full bg-primary w-full shadow-[0_0_10px_rgba(87,91,92,0.3)]"></div>
+</div>
+</div>
+</div>
+<!-- Rubric Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Criterion 1: Conceptual Rigor -->
+<div class="criterion-card glass-panel p-8 rounded-3xl flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase">Criterion 01</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Conceptual Rigor</h3>
+</div>
+<span class="px-3 py-1 bg-primary/10 text-primary font-label-sm text-label-sm rounded-full border border-primary/20">Mastered</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-8">
+                        The ability to synthesize complex theoretical frameworks into cohesive academic narratives. Demonstration of critical thinking and scholarly inquiry through structured evidence.
+                    </p>
+</div>
+<div class="flex items-center gap-4 pt-6 border-t border-outline-variant/20">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">description</span>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">history_edu</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline italic">Supporting documentation attached</span>
+</div>
+</div>
+<!-- Criterion 2: Visual Poetics -->
+<div class="criterion-card glass-panel p-8 rounded-3xl flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase">Criterion 02</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Visual Poetics</h3>
+</div>
+<span class="px-3 py-1 bg-primary/10 text-primary font-label-sm text-label-sm rounded-full border border-primary/20">Mastered</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-8">
+                        Execution of editorial aesthetics, typography hierarchy, and visual balance. Integrating glassmorphic principles with academic structure for a premium digital experience.
+                    </p>
+</div>
+<div class="flex items-center gap-4 pt-6 border-t border-outline-variant/20">
+<div class="w-full flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Design System Fidelity</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">100/100</span>
+</div>
+</div>
+</div>
+<!-- Criterion 3: Digital Literacy -->
+<div class="criterion-card glass-panel p-8 rounded-3xl flex flex-col justify-between group md:col-span-2 lg:col-span-1">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase">Criterion 03</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Digital Literacy</h3>
+</div>
+<span class="px-3 py-1 bg-primary/10 text-primary font-label-sm text-label-sm rounded-full border border-primary/20">Mastered</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-8">
+                        Proficiency in managing digital archives, utilizing modern UI frameworks, and maintaining accessibility standards throughout the portfolio lifecycle.
+                    </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-white/30 rounded-xl border border-white/50 text-center">
+<span class="block font-label-lg text-label-lg font-bold text-primary">A+</span>
+<span class="text-[10px] text-outline uppercase tracking-widest">Metadata</span>
+</div>
+<div class="p-4 bg-white/30 rounded-xl border border-white/50 text-center">
+<span class="block font-label-lg text-label-lg font-bold text-primary">98%</span>
+<span class="text-[10px] text-outline uppercase tracking-widest">Navigation</span>
+</div>
+</div>
+</div>
+<!-- Criterion 4: Reflective Depth -->
+<div class="criterion-card glass-panel p-8 rounded-3xl flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase">Criterion 04</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Reflective Depth</h3>
+</div>
+<span class="px-3 py-1 bg-primary/10 text-primary font-label-sm text-label-sm rounded-full border border-primary/20">Mastered</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md mb-8">
+                        The quality of self-assessment and meta-cognitive awareness. Ability to identify learning trajectories and future scholarly goals through reflection.
+                    </p>
+</div>
+<div class="relative w-full h-12 flex items-center px-4 bg-primary-container/20 rounded-full border border-primary/10 overflow-hidden">
+<div class="absolute left-0 top-0 h-full w-[100%] bg-gradient-to-r from-primary/10 to-primary/30 blur-sm"></div>
+<span class="relative z-10 font-label-sm text-label-sm text-on-primary-container font-semibold italic flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                        Exceeds expectation in holistic integration
+                    </span>
+</div>
+</div>
+</div>
+<!-- Feedback Section -->
+<section class="mt-section-gap glass-panel p-10 rounded-[2.5rem] border-t-4 border-primary">
+<div class="flex flex-col md:flex-row gap-12">
+<div class="flex-1 space-y-6">
+<h4 class="font-headline-sm text-headline-sm text-on-surface italic">Advisor's Summary</h4>
+<p class="text-on-surface-variant font-body-lg text-body-lg leading-relaxed">
+                        The portfolio exhibits an exceptional grasp of both pedagogical content and digital presentation. Kim Chi has successfully bridged the gap between traditional linguistics documentation and contemporary UI/UX principles, resulting in a ledger that is both functional and aesthetically profound.
+                    </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a university professor with a warm expression, soft natural lighting, elegant minimalist attire, scholarly office background with blurred bookshelves, cinematic depth of field, premium academic aesthetic." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-bold">Dr. Elena Rostova</p>
+<p class="text-[10px] text-outline uppercase tracking-widest">Chair of Digital Humanities</p>
+</div>
+</div>
+</div>
+<div class="w-px bg-outline-variant/30 hidden md:block"></div>
+<div class="md:w-1/3 space-y-6">
+<h4 class="font-label-lg text-label-lg text-on-surface uppercase tracking-widest">Milestones reached</h4>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">Archive Structuring Complete</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">Evidence Validation Verified</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">Reflection Synthesis Drafted</span>
+</li>
+</ul>
+<button class="w-full py-4 bg-primary text-on-primary font-label-lg text-label-lg rounded-2xl hover:brightness-110 transition-all shadow-lg shadow-primary/20">
+                        View Detailed Log
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="relative w-full mt-section-gap bg-surface-container-lowest/50 backdrop-blur-lg border-t border-outline-variant/30">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-md px-container-padding max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 mb-6 md:mb-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Editorial Academic Archive</span>
+<p class="text-outline font-body-md text-body-md opacity-80">© 2025 Editorial Academic Archive. All rights reserved.</p>
+</div>
+<div class="flex items-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Accessibility</a>
+</div>
+</div>
+</footer>
+<!-- Atmosphere/Micro-interaction Script -->
+<script>
+        document.querySelectorAll('.criterion-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const glow = card.querySelector('.px-3');
+                if (glow) glow.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const glow = card.querySelector('.px-3');
+                if (glow) glow.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple ripple effect on primary button
+        const btn = document.querySelector('button.bg-primary');
+        btn.addEventListener('mousedown', (e) => {
+            btn.style.transform = 'scale(0.98)';
+        });
+        btn.addEventListener('mouseup', () => {
+            btn.style.transform = 'scale(1)';
+        });
+    </script>
+</body></html>

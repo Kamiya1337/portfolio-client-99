@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Academic Portfolio | Assignments</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#434845",
+                        "outline": "#737875",
+                        "on-secondary-fixed-variant": "#494550",
+                        "secondary-container": "#e7e0ee",
+                        "on-background": "#191c1d",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed": "#d3e4fc",
+                        "tertiary": "#4f6074",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "primary-fixed": "#dbe5df",
+                        "tertiary-container": "#d0e1f9",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#bfc9c3",
+                        "primary": "#57615c",
+                        "on-secondary-fixed": "#1d1a24",
+                        "on-error": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-fixed": "#0b1d2e",
+                        "secondary": "#615c68",
+                        "tertiary-fixed-dim": "#b7c8df",
+                        "inverse-primary": "#bfc9c3",
+                        "secondary-fixed-dim": "#cac4d2",
+                        "surface-container-low": "#f3f4f5",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-primary-fixed-variant": "#3f4945",
+                        "surface-container-highest": "#e1e3e4",
+                        "inverse-surface": "#2e3132",
+                        "surface-tint": "#57615c",
+                        "secondary-fixed": "#e7e0ee",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e1e3e4",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c3c8c4",
+                        "on-tertiary-fixed-variant": "#38485b",
+                        "primary-container": "#d8e2dc",
+                        "on-tertiary-container": "#546478",
+                        "on-primary-container": "#5b6560",
+                        "surface-container": "#edeeef",
+                        "background": "#f8f9fa",
+                        "on-primary-fixed": "#151d1a",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "on-secondary-container": "#67626e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "1.5rem",
+                        "stack-sm": "0.75rem",
+                        "section-gap": "5rem",
+                        "container-padding": "2.5rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Playfair Display"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "display-lg": ["Playfair Display"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background: radial-gradient(circle at 0% 0%, #f8f9fa 0%, #e7e0ee 50%, #dbe5df 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: inset 0 1px 1px rgba(255,255,255,0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .nav-active-glow {
+            position: relative;
+        }
+        .nav-active-glow::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 20px;
+            background: #57615c;
+            border-radius: 2px;
+        }
+
+        .sidebar-gradient {
+            background: rgba(25, 28, 29, 0.95);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(87, 97, 92, 0.2);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface custom-scrollbar">
+<!-- Sidebar (Shared Components - SideNavBar) -->
+<aside class="fixed left-0 top-0 h-full w-[280px] sidebar-gradient text-white flex flex-col p-stack-md z-[60] shadow-xl border-r border-white/10 hidden md:flex">
+<div class="mb-10 px-4">
+<h1 class="font-headline-md text-headline-md font-bold text-white mb-1">Kim Chi</h1>
+<p class="font-label-lg text-label-lg text-outline-variant opacity-80 uppercase tracking-widest">ULIS - VNU</p>
+<div class="mt-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border border-white/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a Vietnamese female student with long black hair, wearing a clean white academic collared shirt, set against a soft blurred beige background for a high-end academic portfolio feel." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-outline-variant">Academic Year</span>
+<span class="text-sm font-bold">2025-26</span>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-4 p-3 rounded-lg text-on-surface-variant hover:bg-white/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">home</span>
+                Overview
+            </a>
+<a class="flex items-center gap-4 p-3 rounded-lg text-primary font-bold bg-primary-container/20 nav-active-glow font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+                Assignments
+            </a>
+<a class="flex items-center gap-4 p-3 rounded-lg text-on-surface-variant hover:bg-white/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">article</span>
+                Evidence
+            </a>
+<a class="flex items-center gap-4 p-3 rounded-lg text-on-surface-variant hover:bg-white/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">fact_check</span>
+                Rubric
+            </a>
+<a class="flex items-center gap-4 p-3 rounded-lg text-on-surface-variant hover:bg-white/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">psychology</span>
+                Reflection
+            </a>
+</nav>
+<div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-2">
+<a class="flex items-center gap-4 p-3 rounded-lg text-on-surface-variant hover:bg-white/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                Archive
+            </a>
+<button class="mt-4 w-full bg-white text-on-background py-3 rounded-xl font-bold font-label-lg text-label-lg hover:shadow-lg active:scale-95 transition-all">
+                Download Portfolio
+            </button>
+</div>
+</aside>
+<!-- Top Bar (Shared Components - TopNavBar) -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-280px)] z-50 bg-surface/30 backdrop-blur-md border-b border-white/10 h-16 px-container-padding flex justify-between items-center">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined md:hidden text-on-surface">menu</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Academic Portfolio</span>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden lg:flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Home</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-lg text-label-lg" href="#">Modules</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">About</a>
+</div>
+<button class="bg-primary text-white px-6 py-2 rounded-full font-label-lg text-label-lg hover:backdrop-brightness-110 transition-all">
+                Contact
+            </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-0 md:ml-[280px] pt-24 pb-section-gap px-container-padding max-w-[1440px]">
+<!-- Hero Section -->
+<section class="mb-section-gap relative overflow-hidden">
+<div class="relative z-10">
+<span class="font-label-lg text-label-lg text-primary tracking-widest uppercase mb-4 block">Curated Portfolio Archive</span>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-6 max-w-4xl leading-tight">
+                    Applied learning,<br/>documented with care.
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Sáu bài tập học phần được trình bày như một hồ sơ học thuật, giữ nguyên báo cáo, minh chứng và liên kết tài nguyên thực tế.
+                </p>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -right-20 -top-20 w-96 h-96 bg-primary/5 rounded-full blur-[100px]"></div>
+</section>
+<!-- Bento Grid for Assignments -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Assignment Card 1 -->
+<div class="glass-card rounded-xl p-stack-md flex flex-col group">
+<div class="flex justify-between items-start mb-6">
+<span class="bg-on-background text-white px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">Assignment 01</span>
+<span class="text-outline text-[12px] font-medium italic">Chương 1 &amp; 2</span>
+</div>
+<div class="relative rounded-lg overflow-hidden mb-6 aspect-video bg-surface-container border border-white/50">
+<img class="w-full h-full object-cover" data-alt="A clean UI screenshot of a digital file management system interface showing folders like 'Báo cáo', 'Minh chứng' with Google Drive-style icons, rendered in a crisp minimalist aesthetic with high-key lighting for an academic look." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">
+                    Bài 1: Máy tính và quản lý tệp/thư mục
+                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                    Tổ chức không gian làm việc số và thiết lập quy tắc quản lý dữ liệu cá nhân.
+                </p>
+<div class="flex flex-wrap gap-2 mb-8 mt-auto">
+<span class="px-2 py-1 bg-white/40 border border-white/60 rounded-full text-[10px] uppercase font-bold text-outline">Quản lý hệ điều hành</span>
+<span class="px-2 py-1 bg-white/40 border border-white/60 rounded-full text-[10px] uppercase font-bold text-outline">Tổ chức dữ liệu</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-white/80 border border-white text-on-background font-label-lg text-label-lg hover:bg-white transition-all">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                        Report
+                    </button>
+<button class="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-primary-container/40 border border-white/40 text-on-primary-container font-label-lg text-label-lg hover:bg-primary-container/60 transition-all">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                        Drive
+                    </button>
+</div>
+</div>
+<!-- Assignment Card 2 -->
+<div class="glass-card rounded-xl p-stack-md flex flex-col group">
+<div class="flex justify-between items-start mb-6">
+<span class="bg-on-background text-white px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">Assignment 02</span>
+<span class="text-outline text-[12px] font-medium italic">Chương 2</span>
+</div>
+<div class="relative rounded-lg overflow-hidden mb-6 aspect-video bg-surface-container border border-white/50">
+<img class="w-full h-full object-cover" data-alt="A macro visualization of a search engine query interface with advanced boolean operators like AND, OR, NOT highlighted in a soft glowing lavender glow, set against a frosted glass background for a scholarly digital research vibe." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">
+                    Bài 2: Khai thác dữ liệu và đánh giá thông tin
+                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                    Áp dụng toán tử tìm kiếm nâng cao và đánh giá nguồn tin học thuật theo tiêu chuẩn CRAAP.
+                </p>
+<div class="flex flex-wrap gap-2 mb-8 mt-auto">
+<span class="px-2 py-1 bg-white/40 border border-white/60 rounded-full text-[10px] uppercase font-bold text-outline">Toán tử tìm kiếm</span>
+<span class="px-2 py-1 bg-white/40 border border-white/60 rounded-full text-[10px] uppercase font-bold text-outline">Đánh giá CRAAP</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-white/80 border border-white text-on-background font-label-lg text-label-lg hover:bg-white transition-all">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                        Report
+                    </button>
+<button class="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-primary-container/40 border border-white/40 text-on-primary-container font-label-lg text-label-lg hover:bg-primary-container/60 transition-all">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                        Drive
+                    </button>
+</div>
+</div>
+<!-- Assignment Card 3 -->
+<div class="glass-card rounded-xl p-stack-md flex flex-col group">
+<div class="flex justify-between items-start mb-6">
+<span class="bg-on-background text-white px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">Assignment 03</span>
+<span class="text-outline text-[12px] font-medium italic">Chương 3</span>
+</div>
+<div class="relative rounded-lg overflow-hidden mb-6 aspect-video bg-surface-container border border-white/50">
+<img class="w-full h-full object-cover" data-alt="A stylized digital art representation of AI interaction, featuring glowing nodal networks and a clean chat interface with perfectly formatted prompts, using a palette of soft mint and icy blue to represent advanced GenAI technology." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">
+                    Bài 3: Viết prompt hiệu quả và sử dụng AI
+                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                    Kỹ thuật giao tiếp với mô hình ngôn ngữ lớn (LLMs) để tối ưu hóa hiệu suất học tập.
+                </p>
+<div class="flex flex-wrap gap-2 mb-8 mt-auto">
+<span class="px-2 py-1 bg-white/40 border border-white/60 rounded-full text-[10px] uppercase font-bold text-outline">Prompt Engineering</span>
+<span class="px-2 py-1 bg-white/40 border border-white/60 rounded-full text-[10px] uppercase font-bold text-outline">Sử dụng GenAI</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-white/80 border border-white text-on-background font-label-lg text-label-lg hover:bg-white transition-all">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                        Report
+                    </button>
+<button class="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-primary-container/40 border border-white/40 text-on-primary-container font-label-lg text-label-lg hover:bg-primary-container/60 transition-all">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                        Drive
+                    </button>
+</div>
+</div>
+<!-- Assignment Card 4 (Placeholder Data) -->
+<div class="glass-card rounded-xl p-stack-md flex flex-col group">
+<div class="flex justify-between items-start mb-6">
+<span class="bg-on-background text-white px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">Assignment 04</span>
+<span class="text-outline text-[12px] font-medium italic">Chương 4</span>
+</div>
+<div class="relative rounded-lg overflow-hidden mb-6 aspect-video bg-surface-container border border-white/50">
+<img class="w-full h-full object-cover" data-alt="An elegant spreadsheet visualization with data charts and graphs rendered in a translucent glassmorphism style, showing clean rows of academic data and sophisticated pastel-colored analytics bars." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">
+                    Bài 4: Xử lý bảng tính và phân tích số liệu
+                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                    Sử dụng các hàm nâng cao và biểu đồ hóa dữ liệu để trình bày báo cáo nghiên cứu.
+                </p>
+<div class="flex flex-wrap gap-2 mb-8 mt-auto">
+<span class="px-2 py-1 bg-white/40 border border-white/60 rounded-full text-[10px] uppercase font-bold text-outline">Excel Advanced</span>
+<span class="px-2 py-1 bg-white/40 border border-white/60 rounded-full text-[10px] uppercase font-bold text-outline">Data Visualization</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-white/80 border border-white text-on-background font-label-lg text-label-lg hover:bg-white transition-all">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                        Report
+                    </button>
+<button class="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-primary-container/40 border border-white/40 text-on-primary-container font-label-lg text-label-lg hover:bg-primary-container/60 transition-all">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                        Drive
+                    </button>
+</div>
+</div>
+<!-- Assignment Card 5 -->
+<div class="glass-card rounded-xl p-stack-md flex flex-col group">
+<div class="flex justify-between items-start mb-6">
+<span class="bg-on-background text-white px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">Assignment 05</span>
+<span class="text-outline text-[12px] font-medium italic">Chương 5</span>
+</div>
+<div class="relative rounded-lg overflow-hidden mb-6 aspect-video bg-surface-container border border-white/50">
+<img class="w-full h-full object-cover" data-alt="A premium presentation design layout featuring cinematic typography and high-end editorial photography, displayed on a glass tablet screen against a blurred scholarly office environment." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">
+                    Bài 5: Thiết kế trình chiếu chuyên nghiệp
+                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                    Xây dựng câu chuyện qua hình ảnh và tối ưu hóa trải nghiệm người xem bài thuyết trình.
+                </p>
+<div class="flex flex-wrap gap-2 mb-8 mt-auto">
+<span class="px-2 py-1 bg-white/40 border border-white/60 rounded-full text-[10px] uppercase font-bold text-outline">Visual Storytelling</span>
+<span class="px-2 py-1 bg-white/40 border border-white/60 rounded-full text-[10px] uppercase font-bold text-outline">UX Design</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-white/80 border border-white text-on-background font-label-lg text-label-lg hover:bg-white transition-all">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                        Report
+                    </button>
+<button class="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-primary-container/40 border border-white/40 text-on-primary-container font-label-lg text-label-lg hover:bg-primary-container/60 transition-all">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                        Drive
+                    </button>
+</div>
+</div>
+<!-- Assignment Card 6 -->
+<div class="glass-card rounded-xl p-stack-md flex flex-col group">
+<div class="flex justify-between items-start mb-6">
+<span class="bg-on-background text-white px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase">Assignment 06</span>
+<span class="text-outline text-[12px] font-medium italic">Final Project</span>
+</div>
+<div class="relative rounded-lg overflow-hidden mb-6 aspect-video bg-surface-container border border-white/50">
+<img class="w-full h-full object-cover" data-alt="A collage of digital academic certificates and portfolio badges rendered as 3D glass icons, floating in a clean gallery space with soft bokeh lighting and professional museum-style atmosphere." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">
+                    Bài 6: Tổng hợp và hoàn thiện Portfolio
+                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                    Xây dựng hệ thống lưu trữ số toàn diện và trình bày thành tựu học tập cá nhân.
+                </p>
+<div class="flex flex-wrap gap-2 mb-8 mt-auto">
+<span class="px-2 py-1 bg-white/40 border border-white/60 rounded-full text-[10px] uppercase font-bold text-outline">Final Synthesis</span>
+<span class="px-2 py-1 bg-white/40 border border-white/60 rounded-full text-[10px] uppercase font-bold text-outline">Digital Archiving</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-white/80 border border-white text-on-background font-label-lg text-label-lg hover:bg-white transition-all">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                        Report
+                    </button>
+<button class="flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-primary-container/40 border border-white/40 text-on-primary-container font-label-lg text-label-lg hover:bg-primary-container/60 transition-all">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                        Drive
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Components - Footer) -->
+<footer class="ml-0 md:ml-[280px] border-t border-outline-variant/30 bg-surface-container-lowest/50 backdrop-blur-lg mt-section-gap relative w-full">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-md px-container-padding max-w-[1200px] mx-auto gap-4">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Editorial Academic Archive</span>
+<p class="font-body-md text-body-md text-outline">© 2025 Editorial Academic Archive. All rights reserved.</p>
+</div>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Accessibility</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for assignment cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential for adding dynamic glow effect follow mouse
+            });
+        });
+
+        // Simple smooth scroll logic
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>
