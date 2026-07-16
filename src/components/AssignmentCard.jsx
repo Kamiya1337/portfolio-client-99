@@ -1,17 +1,14 @@
-import { ArrowRight, FileText, Image as ImageIcon } from 'lucide-react';
+import { ArrowRight, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
-
+ 
 const isAvailable = (value) => Boolean(value && value !== 'Sẽ cập nhật sau' && value !== 'Không yêu cầu');
-
+ 
 export default function AssignmentCard({ project, onSelect }) {
   return (
-    <motion.article className="glass-card flex min-h-[540px] flex-col rounded-glass-lg p-5" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }} whileHover={{ y: -6 }}>
+    <motion.article className="glass-card flex h-full flex-col rounded-glass-lg p-5" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }} whileHover={{ y: -6 }}>
       <div className="flex items-center justify-between gap-3">
         <span className="dark-label-box">Assignment {String(project.id).padStart(2, '0')}</span>
         <span className="text-xs text-muted-dark">{project.chapter}</span>
-      </div>
-      <div className="mt-7 aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-surface-low shadow-inner">
-        {isAvailable(project.evidenceImg) ? <img src={project.evidenceImg} alt={`Minh chứng ${project.title}`} className="h-full w-full object-cover transition duration-500 hover:scale-105" /> : <div className="flex h-full items-center justify-center text-muted-dark"><ImageIcon size={30} /></div>}
       </div>
       <h2 className="mt-7 font-display text-2xl font-bold leading-8 tracking-[-0.02em]">{project.title}</h2>
       <p className="mt-4 text-sm leading-7 text-muted-dark">{project.shortDesc}</p>
