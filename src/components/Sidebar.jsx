@@ -1,13 +1,11 @@
-import { BookOpen, CheckSquare, FileCheck, Home, Menu, MessageSquare, X } from 'lucide-react';
+import { BookOpen, Home, Menu, MessageSquare, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 
 const navItems = [
-  { id: 'home', icon: Home, label: 'Overview' },
-  { id: 'projects', icon: BookOpen, label: 'Assignments' },
-  { id: 'evidence', icon: FileCheck, label: 'Evidence' },
-  { id: 'rubric', icon: CheckSquare, label: 'Rubric' },
-  { id: 'summary', icon: MessageSquare, label: 'Reflection' },
+  { id: 'home', icon: Home, label: 'Giới thiệu' },
+  { id: 'projects', icon: BookOpen, label: 'Dự án' },
+  { id: 'summary', icon: MessageSquare, label: 'Tổng kết' },
 ];
 
 export default function Sidebar({ activeTab, setActiveTab, isMobileOpen, setIsMobileOpen }) {
@@ -22,7 +20,7 @@ export default function Sidebar({ activeTab, setActiveTab, isMobileOpen, setIsMo
       <header className="portfolio-mobile-header border border-white/10 bg-charcoal/95 sticky top-0 z-[60] mx-3 mt-3 flex h-16 items-center justify-between rounded-glass px-5 md:hidden backdrop-blur-xl text-white shadow-md">
         <div>
           <p className="font-display text-lg font-bold text-white">{student.name}</p>
-          <p className="mt-0.5 text-[9px] font-bold uppercase tracking-[0.16em] text-slate-400">English Language & Culture Learning Portfolio</p>
+          <p className="mt-0.5 text-[9px] font-bold uppercase tracking-[0.16em] text-slate-400">Hồ sơ Học tập Ngôn ngữ &amp; Văn hóa Anh</p>
         </div>
         <button type="button" aria-label={isMobileOpen ? 'Đóng menu' : 'Mở menu'} aria-expanded={isMobileOpen} onClick={() => setIsMobileOpen(!isMobileOpen)} className="icon-button-dark border-white/10 bg-white/5 text-white hover:bg-white/10">
           {isMobileOpen ? <X size={19} /> : <Menu size={19} />}
@@ -31,10 +29,10 @@ export default function Sidebar({ activeTab, setActiveTab, isMobileOpen, setIsMo
  
       <aside className={`portfolio-sidebar border-r border-white/10 bg-charcoal/95 md:border md:border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.35)] fixed inset-y-0 left-0 z-50 m-0 flex w-[300px] md:w-[252px] flex-col rounded-none px-4 py-5 text-white backdrop-blur-2xl transition-transform duration-300 md:m-4 md:translate-x-0 md:rounded-glass-lg ${isMobileOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="border-b border-white/10 px-3 pb-7 pt-2">
-          <p className="font-display text-3xl font-bold tracking-[-0.02em] text-white">Portfolio</p>
-          <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Academic Year {student.academicYear}</p>
+          <p className="font-display text-3xl font-bold tracking-[-0.02em] text-white">Hồ sơ Học tập</p>
+          <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Năm học {student.academicYear}</p>
           <div className="mt-8 flex items-center gap-3">
-            <img src="/images.jpg" alt={`${student.name} portfolio owner`} className="h-12 w-12 rounded-2xl object-cover shadow-md border border-white/10" />
+            <img src="/images.jpg" alt={`Ảnh cá nhân ${student.name}`} className="h-12 w-12 rounded-2xl object-cover shadow-md border border-white/10" />
             <div className="space-y-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-slate-300">
               <p className="text-white font-bold">{student.name}</p>
               <p className="text-slate-400">{student.shortUniversity}</p>
@@ -45,7 +43,7 @@ export default function Sidebar({ activeTab, setActiveTab, isMobileOpen, setIsMo
           </div>
         </div>
  
-        <nav className="flex-1 px-1 py-7 space-y-1" aria-label="Portfolio sections">
+        <nav className="flex-1 px-1 py-7 space-y-1" aria-label="Các mục hồ sơ">
           {navItems.map((item, index) => {
             const Icon = item.icon;
             const isActive = item.id === activeTab;
@@ -62,7 +60,7 @@ export default function Sidebar({ activeTab, setActiveTab, isMobileOpen, setIsMo
         </nav>
  
         <div className="border-t border-white/10 px-3 py-5">
-          <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">Editorial Academic Archive</p>
+          <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">Lưu trữ Hồ sơ Học thuật</p>
         </div>
       </aside>
  

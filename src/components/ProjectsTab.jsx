@@ -19,15 +19,15 @@ export default function ProjectsTab() {
   return (
     <div>
       <header className="page-intro">
-        <p className="editorial-label">Curated Portfolio Archive</p>
-        <h1 className="page-title max-w-5xl">Applied learning, documented with care.</h1>
-        <p className="page-copy">Sáu bài tập học phần được trình bày như một hồ sơ học thuật, giữ nguyên báo cáo, minh chứng và liên kết tài nguyên thực tế.</p>
+        <p className="editorial-label">Lưu trữ Bài tập</p>
+        <h1 className="page-title max-w-5xl">Hệ thống 6 bài tập cá nhân</h1>
+        <p className="page-copy">Các bài tập được trình bày một cách hệ thống và rõ ràng, bao gồm: mục tiêu, tóm tắt quá trình và sản phẩm đính kèm.</p>
       </header>
       <section className="mx-auto grid max-w-[1220px] grid-cols-1 gap-6 px-5 pb-28 sm:px-8 lg:grid-cols-2 xl:grid-cols-3 xl:px-12">
         {projects.map((project) => <AssignmentCard key={project.id} project={project} onSelect={setSelectedProject} />)}
       </section>
       <section className="px-5 py-20 sm:px-8 xl:px-12">
-        <div className="glass-panel mx-auto grid max-w-[1220px] gap-10 rounded-glass-lg p-8 lg:grid-cols-2 lg:items-center lg:p-10"><div><p className="editorial-label">Academic Standards</p><h2 className="mt-4 font-display text-4xl font-bold tracking-[-0.02em]">Evidence before decoration.</h2><p className="mt-6 max-w-xl text-base leading-8 text-muted-dark">Mỗi hồ sơ ưu tiên tính chính xác của nội dung, khả năng truy xuất tài nguyên và sự minh bạch trong quá trình thực hiện.</p></div><div className="rounded-glass bg-white/55 p-10 shadow-glass"><p className="editorial-label">Archive Scope</p><p className="mt-5 font-display text-7xl font-bold">{String(projects.length).padStart(2, '0')}</p><p className="mt-2 text-sm text-muted-dark">documented assignments</p></div></div>
+        <div className="glass-panel mx-auto grid max-w-[1220px] gap-10 rounded-glass-lg p-8 lg:grid-cols-2 lg:items-center lg:p-10"><div><p className="editorial-label">Tiêu chuẩn Học thuật</p><h2 className="mt-4 font-display text-4xl font-bold tracking-[-0.02em]">Minh chứng rõ ràng, chất lượng thực tế.</h2><p className="mt-6 max-w-xl text-base leading-8 text-muted-dark">Mỗi bài tập ưu tiên tính chính xác của nội dung, khả năng truy xuất tài nguyên và sự minh bạch trong quá trình thực hiện.</p></div><div className="rounded-glass bg-white/55 p-10 shadow-glass"><p className="editorial-label">Số lượng Bài tập</p><p className="mt-5 font-display text-7xl font-bold">{String(projects.length).padStart(2, '0')}</p><p className="mt-2 text-sm text-muted-dark">báo cáo hoàn thiện</p></div></div>
       </section>
     </div>
   );

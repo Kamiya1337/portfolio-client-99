@@ -3,16 +3,14 @@ import { motion } from 'framer-motion';
 import Sidebar from './components/Sidebar';
 import HomeTab from './components/HomeTab';
 import ProjectsTab from './components/ProjectsTab';
-import EvidenceTable from './components/EvidenceTable';
-import RubricTable from './components/RubricTable';
 import Summary from './components/Summary';
+import BackgroundStars from './components/BackgroundStars';
+import StarClickEffect from './components/StarClickEffect';
 
 const tabTitles = {
-  home: 'Overview / Tổng quan',
-  projects: 'Assignments / Bài tập & Dự án',
-  evidence: 'Evidence / Minh chứng',
-  rubric: 'Rubric / Tiêu chí',
-  summary: 'Reflection / Tổng kết',
+  home: '1. Giới thiệu',
+  projects: '2. Dự án',
+  summary: '3. Tổng kết',
 };
 
 export default function App() {
@@ -27,15 +25,15 @@ export default function App() {
     switch (activeTab) {
       case 'home': return <HomeTab setActiveTab={setActiveTab} />;
       case 'projects': return <ProjectsTab />;
-      case 'evidence': return <EvidenceTable />;
-      case 'rubric': return <RubricTable />;
       case 'summary': return <Summary />;
       default: return <HomeTab setActiveTab={setActiveTab} />;
     }
   };
 
   return (
-    <div className="portfolio-app aether-bg relative min-h-screen text-charcoal md:flex">
+    <div className="portfolio-app aether-bg relative min-h-screen text-charcoal md:flex overflow-hidden">
+      <BackgroundStars />
+      <StarClickEffect />
       <Sidebar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -45,7 +43,7 @@ export default function App() {
       <div className="portfolio-main relative z-10 min-w-0 flex-1 md:ml-sidebar">
         <header className="portfolio-topbar glass-panel sticky top-0 z-30 mx-4 mt-4 hidden h-16 items-center justify-between rounded-glass px-6 md:flex xl:mx-8 xl:px-8">
           <h1 className="font-display text-2xl font-bold tracking-[-0.02em]">{tabTitles[activeTab]}</h1>
-          <span className="editorial-label">Academic Year 2025–26</span>
+          <span className="editorial-label">Năm học 2025–2026</span>
         </header>
         <motion.main
           key={activeTab}

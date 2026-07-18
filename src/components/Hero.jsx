@@ -1,7 +1,12 @@
 import { ArrowRight, FileCheck2, GraduationCap, Contact, School } from 'lucide-react';
 import { motion } from 'framer-motion';
- 
-const headlineWords = ['English', 'Language', '&', 'Culture', 'Learning', 'Portfolio'];
+// Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.
+const headlineLines = [
+  'Nhập Môn',
+  'Công Nghệ Số &',
+  'Ứng Dụng',
+  'Trí Tuệ Nhân Tạo'
+];
  
 export default function Hero({ student, setActiveTab }) {
   return (
@@ -9,17 +14,17 @@ export default function Hero({ student, setActiveTab }) {
       <div className="mx-auto max-w-[1220px]">
         <div className="grid gap-7 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-7 xl:col-span-8">
-            <p className="editorial-label">Academic Year {student.academicYear}</p>
-            <h1 className="mt-6 max-w-5xl font-display text-[clamp(3.4rem,8vw,7.8rem)] font-bold leading-[0.92] tracking-[-0.025em] text-charcoal">
-              {headlineWords.map((word, index) => (
+            <p className="editorial-label">Năm học {student.academicYear}</p>
+            <h1 className="mt-6 font-display text-[clamp(2.8rem,5.6vw,6.2rem)] font-normal leading-[0.96] tracking-[-0.025em] text-charcoal">
+              {headlineLines.map((line, index) => (
                 <motion.span
-                  key={word}
-                  className="mr-[0.18em] inline-block"
-                  initial={{ opacity: 0, y: 38, filter: 'blur(10px)' }}
+                  key={line}
+                  className="block"
+                  initial={{ opacity: 0, y: 32, filter: 'blur(8px)' }}
                   animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                  transition={{ delay: index * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ delay: index * 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  {word}
+                  {line}
                 </motion.span>
               ))}
             </h1>
@@ -34,10 +39,10 @@ export default function Hero({ student, setActiveTab }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.65 }}
             >
-              <p className="font-display text-2xl font-bold leading-snug sm:text-3xl">Portfolio môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.</p>
+              <p className="font-display text-2xl font-bold leading-snug sm:text-3xl">Hồ sơ học tập môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <motion.button whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }} type="button" onClick={() => setActiveTab('projects')} className="button-light">Mục bài tập <ArrowRight size={16} /></motion.button>
-                <motion.button whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }} type="button" onClick={() => setActiveTab('evidence')} className="button-dark-outline">Minh chứng <FileCheck2 size={16} /></motion.button>
+                <motion.button whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }} type="button" onClick={() => setActiveTab('projects')} className="button-light">Xem bài tập <ArrowRight size={16} /></motion.button>
+                <motion.button whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }} type="button" onClick={() => setActiveTab('summary')} className="button-dark-outline">Xem tổng kết <FileCheck2 size={16} /></motion.button>
               </div>
             </motion.div>
           </div>
@@ -50,7 +55,7 @@ export default function Hero({ student, setActiveTab }) {
           >
             <img
               src="/avatar-dinh-thai-son.jpg"
-              alt={`${student.name} portfolio owner`}
+              alt={`Chân dung ${student.name}`}
               className="aspect-[4/5] w-full rounded-[2rem] object-cover object-center shadow-glow"
             />
             
@@ -58,7 +63,7 @@ export default function Hero({ student, setActiveTab }) {
               <div className="rounded-2xl border border-white/60 bg-white/50 p-4 shadow-sm backdrop-blur-md flex flex-col justify-between min-h-[5.5rem]">
                 <GraduationCap size={18} className="text-charcoal" />
                 <div className="mt-3">
-                  <p className="text-[9px] font-bold uppercase tracking-[0.1em] text-muted-dark">Owner</p>
+                  <p className="text-[9px] font-bold uppercase tracking-[0.1em] text-muted-dark">Họ và tên</p>
                   <p className="mt-1 text-[11px] font-bold leading-tight text-charcoal">{student.name}</p>
                 </div>
               </div>
@@ -66,7 +71,7 @@ export default function Hero({ student, setActiveTab }) {
               <div className="rounded-2xl border border-white/60 bg-white/50 p-4 shadow-sm backdrop-blur-md flex flex-col justify-between min-h-[5.5rem]">
                 <Contact size={18} className="text-charcoal" />
                 <div className="mt-3">
-                  <p className="text-[9px] font-bold uppercase tracking-[0.1em] text-muted-dark">Student ID</p>
+                  <p className="text-[9px] font-bold uppercase tracking-[0.1em] text-muted-dark">Mã sinh viên</p>
                   <p className="mt-1 text-[11px] font-bold leading-tight text-charcoal">{student.id}</p>
                 </div>
               </div>
@@ -74,7 +79,7 @@ export default function Hero({ student, setActiveTab }) {
               <div className="rounded-2xl border border-white/60 bg-white/50 p-4 shadow-sm backdrop-blur-md flex flex-col justify-between min-h-[5.5rem]">
                 <School size={18} className="text-charcoal" />
                 <div className="mt-3">
-                  <p className="text-[9px] font-bold uppercase tracking-[0.1em] text-muted-dark">School</p>
+                  <p className="text-[9px] font-bold uppercase tracking-[0.1em] text-muted-dark">Trường học</p>
                   <p className="mt-1 text-[11px] font-bold leading-tight text-charcoal">{student.shortUniversity}</p>
                 </div>
               </div>
