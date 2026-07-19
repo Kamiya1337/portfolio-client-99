@@ -18,8 +18,36 @@ export default function AssignmentDetail({ project, onBack, previewData, onPrevi
           <div className="lg:col-span-3"><p className="editorial-label">Bài tập {String(project.id).padStart(2, '0')}</p><p className="mt-2 text-sm text-muted-dark">{project.chapter}</p></div>
           <div className="lg:col-span-8"><h1 className="font-display text-[clamp(2.5rem,5vw,5rem)] font-bold leading-[0.98] tracking-[-0.02em]">{project.title}</h1><p className="mt-6 max-w-3xl text-base leading-8 text-muted-dark">{project.shortDesc}</p></div>
         </header>
-        <section className="border-b border-border-light bg-white/35 p-7 lg:p-10"><p className="editorial-label">Mục tiêu nhiệm vụ</p><p className="mt-5 text-base leading-8">{project.target}</p></section>
-        <section className="border-t border-border-light p-7 lg:p-12"><p className="editorial-label">Tóm tắt nội dung &amp; Quá trình thực hiện</p><p className="mt-6 max-w-4xl text-base leading-8 whitespace-pre-line">{project.process}</p></section>
+        <section className="border-b border-border-light bg-charcoal/5 p-7 lg:p-10">
+          <p className="editorial-label">Mục tiêu nhiệm vụ</p>
+          <p className="mt-5 text-base leading-8 font-medium text-charcoal">{project.target}</p>
+        </section>
+        <section className="border-t border-border-light p-7 lg:p-12">
+          <p className="editorial-label">Tóm tắt nội dung &amp; Quá trình thực hiện</p>
+          <div className="mt-6 max-w-4xl">
+            {project.process?.split('\n').map((line, idx) => {
+              const trimmed = line.trim();
+              if (!trimmed) return <div key={idx} className="h-3" />;
+
+              const isHeader = trimmed.length < 65 && trimmed.endsWith(':') && !trimmed.includes('. ');
+
+              if (isHeader) {
+                return (
+                  <h4 key={idx} className="mt-7 mb-3 flex items-center gap-2.5 font-display text-lg sm:text-xl font-bold text-charcoal first:mt-0">
+                    <span className="text-primary text-base">★</span>
+                    <span>{trimmed}</span>
+                  </h4>
+                );
+              }
+
+              return (
+                <p key={idx} className="text-base leading-8 text-charcoal/90 mb-2">
+                  {trimmed}
+                </p>
+              );
+            })}
+          </div>
+        </section>
         <section className="border-t border-border-light p-7 lg:p-12">
           <p className="editorial-label">Sản phẩm &amp; Minh chứng</p>
           <div className="mt-6">

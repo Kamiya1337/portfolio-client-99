@@ -10,11 +10,11 @@ const modules = [
 ];
 
 const hobbies = [
+  { label: 'Cà phê với bạn bè', emoji: '☕', bg: 'bg-pink-50/80 border-pink-200 text-pink-800' },
   { label: 'Đọc sách', emoji: '📖', bg: 'bg-rose-50/80 border-rose-200 text-rose-800' },
   { label: 'Nghe nhạc', emoji: '🎵', bg: 'bg-indigo-50/80 border-indigo-200 text-indigo-800' },
-  { label: 'Chụp ảnh', emoji: '📷', bg: 'bg-amber-50/80 border-amber-200 text-amber-800' },
-  { label: 'Cà phê cuối tuần', emoji: '☕', bg: 'bg-pink-50/80 border-pink-200 text-pink-800' },
-  { label: 'Khám phá điều mới', emoji: '🧭', bg: 'bg-sky-50/80 border-sky-200 text-sky-800' },
+  { label: 'Xem bóng đá', emoji: '⚽', bg: 'bg-emerald-50/80 border-emerald-200 text-emerald-800' },
+  { label: 'Ngủ thật ngon', emoji: '😴', bg: 'bg-amber-50/80 border-amber-200 text-amber-800' },
 ];
 
 export default function HomeTab({ setActiveTab }) {
